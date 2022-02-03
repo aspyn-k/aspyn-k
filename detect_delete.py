@@ -2,16 +2,12 @@
 
 from curses import KEY_MARK
 import hashlib
-from re import A, X
-from tkinter import Y
-from unittest import result
-
 import os, shutil
 
 a_list =[]
 a_name = []
 
-directory = 'C:/Users/user/yolo/test/'
+directory = 'first directory_dir'
 for path, dirs, files in os.walk(directory):
     for names in files:
         filedir = os.path.join(path,names)
@@ -38,7 +34,7 @@ print(x)
 
 b_list=[]
 b_name=[]
-directory_compare = 'C:/Users/user/yolo/remove/'
+directory_compare = 'compare directory_dir'
 for root, dirs, files in os.walk(directory_compare):
     for names in files:
         
@@ -61,14 +57,14 @@ y = {'hash': b_list, 'filename': b_name}
 print(y)
 
 
-os.mkdir("C:/Users/user/yolo/ki")  
+os.mkdir("make directory_dir")  
 for xx in x['hash'] :
     for xxx in x['filename']:
         for yy in y['hash']:
             for yyy in y['filename']:
                 if xx == yy:
                     print(xxx)
-                    file_destination = 'C:/Users/user/yolo/ki'
+                    file_destination = 'make directory_dir'
                     shutil.move(directory + xxx, file_destination)
                 else:
                     print("안뇽")
@@ -77,7 +73,7 @@ for xx in x['hash'] :
             break
         break
     break
-shutil.rmtree('C:/Users/user/yolo/ki')
+shutil.rmtree('make directory_dir')
 
 
 
